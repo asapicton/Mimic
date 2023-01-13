@@ -22,6 +22,6 @@ https://webhome.csc.uvic.ca/~asapicton/Mimic/mimic.html - updated regularly
 
 THANKS FOR PLAYING
 
-please report any bugs, suggestions, or even level designs to asapicton@gmail.com!
+please send any found bugs, suggestions, or even level designs to asapicton@gmail.com!
 
 
