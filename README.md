@@ -18,7 +18,7 @@ Arrows keys
 
 URL
 
-https://webhome.csc.uvic.ca/~asapicton/Mimic/mimic.html - updated regularly
+https://webhome.csc.uvic.ca/~asapicton/Mimic/mimic.html - updated regularly, not yet updated for mobile support
 
 THANKS FOR PLAYING
 
