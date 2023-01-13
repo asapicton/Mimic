@@ -1,0 +1,41 @@
+<body>
+    <div style="position: relative;">
+
+        <div style="position: static;">
+            <div id="levels"></div>
+                <button style = "font-size: 40px" onclick="startGame('level1')">Level 1</button>
+                <button style = "font-size: 40px" onclick="startGame('level2')">Level 2</button>
+                <button style = "font-size: 40px" onclick="startGame('level3')">Level 3</button>
+                <button style = "font-size: 40px" onclick="startGame('level4')">Level 4</button>
+                <button style = "font-size: 40px" onclick="startGame('level5')">Level 5</button>
+                <button style = "font-size: 40px" onclick="startGame('level6')">Level 6</button>
+            </div>
+        </div>
+
+        <div style="
+            position: absolute; 
+            font-size: 80px; 
+            width: 65.5%; 
+            height: 79%; 
+            display: flex; 
+            justify-content: 
+            center; 
+            align-items: center;
+        ">
+            <div id="win" style="
+                color: white; 
+                background-color: rgba(151, 139, 70, 0.433); 
+                padding: 30px; 
+                display: none;
+                border-radius: 5px;
+            ">
+            </div>
+        </div>
+
+        <canvas></canvas>
+    </div>
+    <script src="Javascript/classes.js"></script>
+    <script src="Javascript/mimic.js"></script>
+    <script src="Javascript/levels.js"></script>
+    <script src="Javascript/utils.js"></script>
+</body>
