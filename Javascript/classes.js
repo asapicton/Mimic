@@ -80,6 +80,8 @@ class Level {
 
         this.player = player
         this.mimic = mimic
+
+        this.won = false
     }
 
     loadLevel() {

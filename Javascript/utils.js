@@ -2,6 +2,7 @@
 function reload(level) {
     document.querySelector('#win').innerHTML = ''
     document.querySelector('#win').style.display = 'none'
+    /*
     let player = level.player
     let mimic = level.mimic
     
@@ -21,6 +22,7 @@ function reload(level) {
     mimic.gridPosY = 0
     player.position = {x: PLAYER_START_X, y: PLAYER_START_Y}
     mimic.position = {x: MIMIC_START_X, y: MIMIC_START_Y}
+    */
 }
 
 /*
@@ -244,7 +246,6 @@ function movePlayer(player, direction) {
                 player.moveRight = false
                 updateGrid(player, direction, 1)
             }
-            console.log(player.velocity.x)
             break
         case "left":
             player.velocity.x = -PLAYER_VELOCITY
@@ -257,7 +258,6 @@ function movePlayer(player, direction) {
                 player.moveLeft = false
                 updateGrid(player, direction, 1)
             }
-            console.log(player.velocity.x)
             break
         case "up":
             player.velocity.y = -PLAYER_VELOCITY
@@ -269,7 +269,6 @@ function movePlayer(player, direction) {
                 player.moveUp = false
                 updateGrid(player, direction, 1)
             }
-            console.log(player.velocity.y)
             break
         case "down":
             player.velocity.y = PLAYER_VELOCITY
@@ -281,7 +280,6 @@ function movePlayer(player, direction) {
                 player.moveDown = false
                 updateGrid(player, direction, 1)
             }
-            console.log(player.velocity.y)
             break
     }
 } 

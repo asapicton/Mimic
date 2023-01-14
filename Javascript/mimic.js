@@ -59,6 +59,7 @@ function playLevel(level) {
             if(checkWinState(mimic, player)) {
 
                 // displays win on screen
+                level.won = true
                 document.querySelector('#win').style.display = 'flex'
                 document.querySelector('#win').innerHTML = 'LEVEL COMPLETE'
             }
@@ -66,6 +67,7 @@ function playLevel(level) {
         if(mimic.moveUp) {
             moveMimic(mimic, "up")
             if(checkWinState(mimic, player)) {
+                level.won = true
                 document.querySelector('#win').style.display = 'flex'
                 document.querySelector('#win').innerHTML = 'LEVEL COMPLETE'
             }
@@ -73,6 +75,7 @@ function playLevel(level) {
         if(player.moveDown) {
             movePlayer(player, "down")
             if(checkWinState(mimic, player)) {
+                level.won = true
                 document.querySelector('#win').style.display = 'flex'
                 document.querySelector('#win').innerHTML = 'LEVEL COMPLETE'
             }
@@ -80,6 +83,7 @@ function playLevel(level) {
         if(mimic.moveDown) {
             moveMimic(mimic, "down")
             if(checkWinState(mimic, player)) {
+                level.won = true
                 document.querySelector('#win').style.display = 'flex'
                 document.querySelector('#win').innerHTML = 'LEVEL COMPLETE'
             }
@@ -87,6 +91,7 @@ function playLevel(level) {
         if(player.moveLeft) {
             movePlayer(player, "left")
             if(checkWinState(mimic, player)) {
+                level.won = true
                 document.querySelector('#win').style.display = 'flex'
                 document.querySelector('#win').innerHTML = 'LEVEL COMPLETE'
             }
@@ -94,6 +99,7 @@ function playLevel(level) {
         if(mimic.moveLeft) {
             moveMimic(mimic, "left")
             if(checkWinState(mimic, player)) {
+                level.won = true
                 document.querySelector('#win').style.display = 'flex'
                 document.querySelector('#win').innerHTML = 'LEVEL COMPLETE'
             }
@@ -101,6 +107,7 @@ function playLevel(level) {
         if(mimic.moveRight) {
             moveMimic(mimic, "right")
             if(checkWinState(mimic, player)) {
+                level.won = true
                 document.querySelector('#win').style.display = 'flex'
                 document.querySelector('#win').innerHTML = 'LEVEL COMPLETE'
             }
@@ -108,6 +115,7 @@ function playLevel(level) {
         if(player.moveRight) {
             movePlayer(player, "right")
             if(checkWinState(mimic, player)) {
+                level.won = true
                 document.querySelector('#win').style.display = 'flex'
                 document.querySelector('#win').innerHTML = 'LEVEL COMPLETE'
             }
