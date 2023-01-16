@@ -1,6 +1,5 @@
 
 function reload(level) {
-    console.log("reloading level")
     document.querySelector('#win').innerHTML = ''
     document.querySelector('#win').style.display = 'none'
     /*
