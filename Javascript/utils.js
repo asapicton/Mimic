@@ -138,7 +138,6 @@ checks if movement would cause sprite to be out of bounds, to
 move in two directions at once, or to land on a barrier
 */
 function allowMovement(sprite, direction) {
-    
     switch(direction) {
         case "right":
             var bounds = sprite.position.x + (sprite.spaceWidth * sprite.range) 

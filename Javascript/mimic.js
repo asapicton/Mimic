@@ -125,7 +125,7 @@ function playLevel(level) {
 
     // checks for keypresses to allow player movement control
     window.addEventListener('keydown', (event) => {
-        if(notMoving(player, mimic)) {
+        if(notMoving(player, mimic) && !level.won) {
             switch (event.key) {
 
                 // moves sprite right
