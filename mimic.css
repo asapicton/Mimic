@@ -1,0 +1,21 @@
+#canvas {
+    position: absolute; 
+    font-size: 80px; 
+    width: 65.5%; 
+    height: 79%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+#win {
+    color: white; 
+    background-color: rgba(151, 139, 70, 0.433); 
+    padding: 30px; 
+    display: none;
+    border-radius: 5px;
+}
+#buttons {
+    position: static; 
+    float: right; 
+    width: 100%;
+}
