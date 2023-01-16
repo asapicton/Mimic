@@ -61,6 +61,8 @@ class Sprite {
     update() {
         this.drawSprite()
         
+    
+        console.log("updating sprite")
         //updates velocity
         this.position.x += this.velocity.x
         this.position.y += this.velocity.y

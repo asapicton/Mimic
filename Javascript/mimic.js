@@ -30,16 +30,14 @@ const canvas = document.querySelector('canvas')
 const draw = canvas.getContext('2d')
 canvas.width = 1024
 canvas.height = 576 
-let player = 0
-let mimic = 0
+var player = 0
+var mimic = 0
 
 function playLevel(level) {
     
-    reload(level)
     player = level.player
     mimic = level.mimic
-    console.log(player.grid)
-    console.log(mimic.grid)
+    reload(level)
 
     // animates game frames
     function animate() {
