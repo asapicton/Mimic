@@ -439,15 +439,19 @@ function startGame(level = nextLevel) {
         nextLevel = 'level2'
         playLevel(level1)
     } else if(level === "level2") {
+        document.querySelector('#level2').style.display = 'inline'
         nextLevel = 'level3'
         playLevel(level2)
     } else if(level === "level3") {
+        document.querySelector('#level3').style.display = 'inline'
         nextLevel = 'level4'
         playLevel(level3)
     } else if(level === "level4") {
+        document.querySelector('#level4').style.display = 'inline'
         nextLevel = 'level5'
         playLevel(level4)
     } else if(level === "level5") {
+        document.querySelector('#level5').style.display = 'inline'
         nextLevel = 'level6'
         playLevel(level5)
     } else if(level === "level6") {
