@@ -1,29 +1,30 @@
 
-function reload(level) {
-    document.querySelector('#win').innerHTML = ''
-    document.querySelector('#win').style.display = 'none'
-    /*
-    let player = level.player
-    let mimic = level.mimic
-    
-    // resets grids
-    for(var i = 0; i < player.grid.length; i++) {
-        player.grid[i] = player.gridDefault[i].slice();
-    }
-    for(var i = 0; i < mimic.grid.length; i++) {
-        mimic.grid[i] = mimic.gridDefault[i].slice();
-    }
-    
+// globals
 
-    // resets positions
-    player.gridPosX = 0
-    player.gridPosY = 0
-    mimic.gridPosX = 0
-    mimic.gridPosY = 0
-    player.position = {x: PLAYER_START_X, y: PLAYER_START_Y}
-    mimic.position = {x: MIMIC_START_X, y: MIMIC_START_Y}
-    */
-}
+// grid dimensions
+const GRID_WIDTH          = 482
+const GRID_HEIGHT         = 536
+const GRID_MARGIN         = 20
+
+// player and mimic dimensions
+const PLAYER_RADIUS = 50
+const MIMIC_RADIUS  = 30
+
+// player specs
+const PLAYER_SPACE_WIDTH  = GRID_WIDTH / 4
+const PLAYER_SPACE_HEIGHT = GRID_HEIGHT / 4
+const PLAYER_VELOCITY     = 30
+const MIMIC_VELOCITY      = 29
+const PLAYER_START_X      = GRID_MARGIN + ((PLAYER_SPACE_WIDTH / 2) - (PLAYER_RADIUS / 2))
+const PLAYER_START_Y      = GRID_MARGIN + ((PLAYER_SPACE_HEIGHT / 2) - (PLAYER_RADIUS / 2))
+
+// mimic grid
+const MIMIC_SPACE_WIDTH  = GRID_WIDTH / 7
+const MIMIC_SPACE_HEIGHT = GRID_HEIGHT / 7
+const MIMIC_START_X      = (2 * GRID_MARGIN) + GRID_WIDTH + 
+                           ((MIMIC_SPACE_WIDTH / 2) - (MIMIC_RADIUS / 2))
+const MIMIC_START_Y      = GRID_MARGIN +  ((MIMIC_SPACE_HEIGHT / 2) - 
+                           (MIMIC_RADIUS / 2))
 
 /*
 Stops game if both player and mimic are on their finishing
@@ -69,8 +70,9 @@ function updateGrid(sprite, direction, numSpaces) {
             }
             sprite.grid[sprite.gridPosY][sprite.gridPosX + numSpaces] = 2
         }
+
+        // updates grid position
         sprite.gridPosX += numSpaces   
-        console.log(sprite.grid)
     } else if (direction === "left") {
         if(sprite.onFinish) {
             sprite.grid[sprite.gridPosY][sprite.gridPosX] = 3
@@ -84,7 +86,6 @@ function updateGrid(sprite, direction, numSpaces) {
             sprite.grid[sprite.gridPosY][sprite.gridPosX - numSpaces] = 2
         }
         sprite.gridPosX -= numSpaces
-        console.log(sprite.grid)
 
     } else if (direction === "down") {
         if(sprite.onFinish) {
@@ -99,7 +100,6 @@ function updateGrid(sprite, direction, numSpaces) {
             sprite.grid[sprite.gridPosY + numSpaces][sprite.gridPosX] = 2
         }
         sprite.gridPosY += numSpaces
-        console.log(sprite.grid)
   
     } else {
         if(sprite.onFinish) {
@@ -114,7 +114,6 @@ function updateGrid(sprite, direction, numSpaces) {
             sprite.grid[sprite.gridPosY - numSpaces][sprite.gridPosX] = 2
         }
         sprite.gridPosY -= numSpaces
-        console.log(sprite.grid)
     }
 }
 
@@ -140,10 +139,15 @@ move in two directions at once, or to land on a barrier
 function allowMovement(sprite, direction) {
     switch(direction) {
         case "right":
+
+            // returns false right away if movement would put sprite out of bounds
             var bounds = sprite.position.x + (sprite.spaceWidth * sprite.range) 
             if(bounds > (sprite.gridWidth + sprite.offsetX)) {
                 return false
             }
+
+            // allows movement 1 or two spaces away, twoAway will be the same as oneAway
+            // for player but different for mimic
             var oneAway = sprite.grid[sprite.gridPosY][sprite.gridPosX + 1]
             var twoAway = sprite.grid[sprite.gridPosY][sprite.gridPosX + sprite.range]
             return(
@@ -196,6 +200,8 @@ function allowOddMovement(mimic, direction) {
     let gridY = mimic.gridPosY
     switch(direction) {
         case "right":
+
+            // checks if odd movement of mimic is allowed
             if((mimic.grid[gridY][gridX + 1]) && (gridX + 2 >= 7 || !(mimic.grid[gridY][gridX + 2]))) {
                 return true
             } else {
@@ -234,9 +240,9 @@ function movePlayer(player, direction) {
     switch(direction) {
         case "right":
             player.velocity.x = PLAYER_VELOCITY
+
             // checks distance travelled against distance needed to be covered to
             // get to the next square 
-    
             if(player.position.x - player.startX >= PLAYER_SPACE_WIDTH) {
 
                 // puts player in exact right spot
@@ -290,22 +296,27 @@ animation loop until setting specified direction key back to false
 function moveMimic(mimic, direction) {
     switch(direction) {
         case "right":
-            mimic.velocity.x = PLAYER_VELOCITY - 10
+            mimic.velocity.x = MIMIC_VELOCITY
 
-            // checks distance travelled against distance needed to be covered to
-            // get to the next square 
+
+            // if odd movement allowed, move mimic 1 space, otherwise move mimic 2 spaces
             if(allowOddMovement(mimic, direction)) {
-                if(mimic.position.x - mimic.startX >= mimic.spaceWidth) {
+
+                // checks distance travelled against distance needed to be covered to
+                // get to the next square 
+                if(mimic.position.x - mimic.startX >= mimic.spaceWidth ) {
                     mimic.velocity.x = 0
                     mimic.moveRight = false
+
                     // puts mimic in exact right spot
                     mimic.position.x = mimic.startX + (mimic.spaceWidth)
                     updateGrid(mimic, direction, 1)
                 }
             } else {
-                if(mimic.position.x - mimic.startX >= mimic.spaceWidth) {
+                if(mimic.position.x - mimic.startX >= (mimic.spaceWidth * 2)) {
                     mimic.velocity.x = 0
                     mimic.moveRight = false
+
                     // puts mimic in exact right spot
                     mimic.position.x = mimic.startX + (mimic.spaceWidth * 2)
                     updateGrid(mimic, direction, 2)
@@ -313,20 +324,16 @@ function moveMimic(mimic, direction) {
             }
             break
         case "left":
-            mimic.velocity.x = -PLAYER_VELOCITY + 10
+            mimic.velocity.x = -MIMIC_VELOCITY
             if(allowOddMovement(mimic, direction)) {
                 if(mimic.startX - mimic.position.x >= mimic.spaceWidth) {
-
-                    // puts mimic in exact right spot
                     mimic.position.x = mimic.startX - (mimic.spaceWidth)
                     mimic.velocity.x = 0
                     mimic.moveLeft = false
                     updateGrid(mimic, direction, 1)
                 }
             } else {
-                if(mimic.startX - mimic.position.x >= mimic.spaceWidth) {
-
-                    // puts mimic in exact right spot
+                if(mimic.startX - mimic.position.x >= (mimic.spaceWidth * 2)) {
                     mimic.position.x = mimic.startX - (mimic.spaceWidth * 2)
                     mimic.velocity.x = 0
                     mimic.moveLeft = false
@@ -335,18 +342,16 @@ function moveMimic(mimic, direction) {
             }
             break
         case "up":
-            mimic.velocity.y = -PLAYER_VELOCITY + 10
+            mimic.velocity.y = -MIMIC_VELOCITY
             if(allowOddMovement(mimic, direction)) {
                 if(mimic.startY - mimic.position.y > mimic.spaceHeight) {
-                    // puts mimic in exact right spot
                     mimic.position.y = mimic.startY - (mimic.spaceHeight)
                     mimic.velocity.y = 0
                     mimic.moveUp = false
                     updateGrid(mimic, direction, 1)
                 }
             } else {
-                if(mimic.startY - mimic.position.y > mimic.spaceHeight) {
-                    // puts mimic in exact right spot
+                if(mimic.startY - mimic.position.y > (mimic.spaceWidth * 2)) {
                     mimic.position.y = mimic.startY - (mimic.spaceHeight * 2)
                     mimic.velocity.y = 0
                     mimic.moveUp = false
@@ -355,20 +360,16 @@ function moveMimic(mimic, direction) {
             }
             break
         case "down":
-            mimic.velocity.y = PLAYER_VELOCITY - 10
+            mimic.velocity.y = MIMIC_VELOCITY
             if(allowOddMovement(mimic, direction)) {
                 if(mimic.position.y - mimic.startY > mimic.spaceHeight) {
-
-                    // puts mimic in exact right spot
                     mimic.position.y = mimic.startY + (mimic.spaceHeight)
                     mimic.velocity.y = 0
                     mimic.moveDown = false
                     updateGrid(mimic, direction, 1)
                 } 
             } else {
-                if(mimic.position.y - mimic.startY > mimic.spaceHeight) {
-
-                    // puts mimic in exact right spot
+                if(mimic.position.y - mimic.startY > (mimic.spaceWidth * 2)) {
                     mimic.position.y = mimic.startY + (mimic.spaceHeight * 2)
                     mimic.velocity.y = 0
                     mimic.moveDown = false
@@ -378,4 +379,5 @@ function moveMimic(mimic, direction) {
             break
     }
 } 
+
 

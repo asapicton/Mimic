@@ -2,21 +2,23 @@
     <div style="position: relative;">
         <div id = "buttons">
             <div id="levels"></div>
-                <button class= "level-buttons" onclick="startGame('level1')">Level 1</button>
-                <button class= "level-buttons" onclick="startGame('level2')">Level 2</button>
-                <button class= "level-buttons" onclick="startGame('level3')">Level 3</button>
-                <button class= "level-buttons" onclick="startGame('level4')">Level 4</button>
-                <button class= "level-buttons" onclick="startGame('level5')">Level 5</button>
-                <button class= "level-buttons" onclick="startGame('level6')">Level 6</button>
+                <button id = 'level1' class= "level-buttons" onclick="startGame('level1')">Level 1</button>
+                <button id = 'level2' class= "level-buttons" onclick="startGame('level2')">Level 2</button>
+                <button id = 'level3' class= "level-buttons" onclick="startGame('level3')">Level 3</button>
+                <button id = 'level4' class= "level-buttons" onclick="startGame('level4')">Level 4</button>
+                <button id = 'level5' class= "level-buttons" onclick="startGame('level5')">Level 5</button>
+                <button id = 'level6' class= "level-buttons" onclick="startGame('level6')">Level 6</button>
             </div>
         </div>
 
         <div id = "canvas">
             <div id="win"></div>
+                <button id="next-level" onclick="startGame()">Next Level</button>
+            </div>
         </div>
         <img src="Img/arrows.png">
 
-        <canvas></canvas>
+        <canvas id="game"></canvas>
     </div>
     <script src="Javascript/classes.js"></script>
     <script src="Javascript/mimic.js"></script>

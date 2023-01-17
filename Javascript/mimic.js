@@ -1,47 +1,35 @@
-
-// globals
-
-// grid dimensions
-const GRID_WIDTH          = 482
-const GRID_HEIGHT         = 536
-const GRID_MARGIN         = 20
-
-// player and mimic dimensions
-const PLAYER_RADIUS = 50
-const MIMIC_RADIUS  = 30
-
-// player specs
-const PLAYER_SPACE_WIDTH  = GRID_WIDTH / 4
-const PLAYER_SPACE_HEIGHT = GRID_HEIGHT / 4
-const PLAYER_VELOCITY     = 30
-const PLAYER_START_X      = GRID_MARGIN + ((PLAYER_SPACE_WIDTH / 2) - (PLAYER_RADIUS / 2))
-const PLAYER_START_Y      = GRID_MARGIN + ((PLAYER_SPACE_HEIGHT / 2) - (PLAYER_RADIUS / 2))
-
-// mimic grid
-const MIMIC_SPACE_WIDTH  = GRID_WIDTH / 7
-const MIMIC_SPACE_HEIGHT = GRID_HEIGHT / 7
-const MIMIC_START_X      = (2 * GRID_MARGIN) + GRID_WIDTH + 
-                           ((MIMIC_SPACE_WIDTH / 2) - (MIMIC_RADIUS / 2))
-const MIMIC_START_Y      = GRID_MARGIN +  ((MIMIC_SPACE_HEIGHT / 2) - 
-                           (MIMIC_RADIUS / 2))
-
 // canvas setup
 const canvas = document.querySelector('canvas')
 const draw = canvas.getContext('2d')
 canvas.width = 1024
 canvas.height = 576 
-var player = 0
-var mimic = 0
 
+// Sprite constants
+var player;
+var mimic;
+
+// Used to stop animation frames
+let requestId;
+
+/*
+Main function, called once per level or per reset
+*/
 function playLevel(level) {
-    
     player = level.player
     mimic = level.mimic
-    reload(level)
+
+    // resets animation loop and win state from previous level
+    window.cancelAnimationFrame(requestId)
+    document.querySelector('#win').innerHTML = ''
+    document.querySelector('#win').style.display = 'none'
+    document.querySelector('#next-level').style.display = 'none'
+
+
 
     // animates game frames
     function animate() {
-        window.requestAnimationFrame(animate)
+        requestId = window.requestAnimationFrame(animate)
+
         draw.fillStyle = 'black'
         draw.fillRect(0, 0, canvas.width, canvas.height)
         
@@ -49,7 +37,7 @@ function playLevel(level) {
         level.update()
         player.update()
         mimic.update()
-
+        
 
 
         // moves player/mimic with move function if directional key has been pressed
@@ -62,6 +50,7 @@ function playLevel(level) {
                 // displays win on screen
                 level.won = true
                 document.querySelector('#win').style.display = 'flex'
+                document.querySelector('#next-level').style.display = 'flex'
                 document.querySelector('#win').innerHTML = 'LEVEL COMPLETE'
             }
         }
@@ -70,6 +59,7 @@ function playLevel(level) {
             if(checkWinState(mimic, player)) {
                 level.won = true
                 document.querySelector('#win').style.display = 'flex'
+                document.querySelector('#next-level').style.display = 'flex'
                 document.querySelector('#win').innerHTML = 'LEVEL COMPLETE'
             }
         }
@@ -78,6 +68,7 @@ function playLevel(level) {
             if(checkWinState(mimic, player)) {
                 level.won = true
                 document.querySelector('#win').style.display = 'flex'
+                document.querySelector('#next-level').style.display = 'flex'
                 document.querySelector('#win').innerHTML = 'LEVEL COMPLETE'
             }
         }
@@ -86,6 +77,7 @@ function playLevel(level) {
             if(checkWinState(mimic, player)) {
                 level.won = true
                 document.querySelector('#win').style.display = 'flex'
+                document.querySelector('#next-level').style.display = 'flex'
                 document.querySelector('#win').innerHTML = 'LEVEL COMPLETE'
             }
         }
@@ -94,6 +86,7 @@ function playLevel(level) {
             if(checkWinState(mimic, player)) {
                 level.won = true
                 document.querySelector('#win').style.display = 'flex'
+                document.querySelector('#next-level').style.display = 'flex'
                 document.querySelector('#win').innerHTML = 'LEVEL COMPLETE'
             }
         }
@@ -102,6 +95,7 @@ function playLevel(level) {
             if(checkWinState(mimic, player)) {
                 level.won = true
                 document.querySelector('#win').style.display = 'flex'
+                document.querySelector('#next-level').style.display = 'flex'
                 document.querySelector('#win').innerHTML = 'LEVEL COMPLETE'
             }
         }
@@ -110,6 +104,7 @@ function playLevel(level) {
             if(checkWinState(mimic, player)) {
                 level.won = true
                 document.querySelector('#win').style.display = 'flex'
+                document.querySelector('#next-level').style.display = 'flex'
                 document.querySelector('#win').innerHTML = 'LEVEL COMPLETE'
             }
         }
@@ -118,6 +113,7 @@ function playLevel(level) {
             if(checkWinState(mimic, player)) {
                 level.won = true
                 document.querySelector('#win').style.display = 'flex'
+                document.querySelector('#next-level').style.display = 'flex'
                 document.querySelector('#win').innerHTML = 'LEVEL COMPLETE'
             }
         }

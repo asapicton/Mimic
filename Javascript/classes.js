@@ -6,7 +6,6 @@ class Sprite {
         position = {x: 0, y: 0}, 
         velocity = {x: 0, y: 0},
         grid, 
-        gridDefault,
         range,
         gridWidth,
         gridHeight,
@@ -33,7 +32,6 @@ class Sprite {
 
         // dimensions of the grid the sprite moves in 
         this.grid = grid // changes during movement
-        this.gridDefault = gridDefault// used to reset back to original
         this.gridWidth = gridWidth
         this.gridHeight = gridHeight
         this.spaceWidth = spaceWidth
@@ -70,7 +68,7 @@ class Sprite {
 // level class for each individual levels layout
 class Level {
 
-    constructor({imageSrc, position = {x: 0, y: 0}, levelMap, player, mimic}) {
+    constructor({levelNum, imageSrc, position = {x: 0, y: 0}, levelMap, player, mimic}) {
         this.levelMap = levelMap
         this.position = position
         this.imageSrc = imageSrc
@@ -80,7 +78,7 @@ class Level {
 
         this.player = player
         this.mimic = mimic
-
+        this.levelNum = levelNum
         this.won = false
     }
 

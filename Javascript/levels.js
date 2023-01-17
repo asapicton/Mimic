@@ -1,6 +1,8 @@
-function startGame(level) {
+let nextLevel;
+function startGame(level = nextLevel) {
     // level 1
     const level1 = new Level({
+        levelNum: 1,
         imageSrc: 'Img/level1-beta.png',
         position: {
             x: 0,
@@ -28,18 +30,12 @@ function startGame(level) {
                 [1,1,3,1],
                 [1,1,1,1]
             ],
-            gridDefault: [
-                [2,1,1,1],
-                [1,1,1,1],
-                [1,1,3,1],
-                [1,1,1,1]
-            ],
             range: 1,
             gridWidth: 482,
             gridHeight: 536,
             numRows: 4,
             offsetX: GRID_MARGIN,
-            offsetY: GRID_MARGIN
+            offsetY: GRID_MARGIN,
         }),
 
         // mimic of player 
@@ -67,15 +63,6 @@ function startGame(level) {
                 [1,1,1,1,1,1,1],
                 [1,1,1,1,1,1,1]
             ],
-            gridDefault: [
-                [2,1,1,1,1,1,1],
-                [1,1,1,1,1,1,1],
-                [1,1,1,1,1,1,1],
-                [1,1,1,1,1,1,1],
-                [1,1,1,1,3,1,1],
-                [1,1,1,1,1,1,1],
-                [1,1,1,1,1,1,1]
-            ],
             range: 2,
             gridWidth: 482,
             gridHeight: 536,
@@ -88,6 +75,7 @@ function startGame(level) {
 
     // level 2
     const level2 = new Level({
+        levelNum: 2,
         imageSrc: 'Img/level2-beta.png',
         position: {
             x: 0,
@@ -115,12 +103,6 @@ function startGame(level) {
                 [1,1,1,1],
                 [1,1,1,1]
             ],
-            gridDefault: [
-                [2,1,1,3],
-                [1,1,1,0],
-                [1,1,1,1],
-                [1,1,1,1]
-            ],
             range: 1,
             gridWidth: 482,
             gridHeight: 536,
@@ -154,15 +136,6 @@ function startGame(level) {
                 [1,1,1,1,1,1,1],
                 [1,1,1,1,1,1,3]
             ],
-            gridDefault: [
-                [2,1,1,1,1,1,1],
-                [1,1,1,1,1,1,1],
-                [1,1,1,1,1,1,1],
-                [1,1,1,1,1,1,1],
-                [1,1,1,1,1,1,1],
-                [1,1,1,1,1,1,1],
-                [1,1,1,1,1,1,3]
-            ],
             range: 2,
             gridWidth: 482,
             gridHeight: 536,
@@ -174,6 +147,7 @@ function startGame(level) {
 
     // level 3
     const level3 = new Level({
+        levelNum: 3,
         imageSrc: 'Img/level3-beta.png',
         position: {
             x: 0,
@@ -201,12 +175,6 @@ function startGame(level) {
                 [3,1,1,1],
                 [1,1,1,1]
             ],
-            gridDefault: [
-                [2,1,1,1],
-                [1,1,1,1],
-                [3,1,1,1],
-                [1,1,1,1]
-            ],
             range: 1,
             gridWidth: 482,
             gridHeight: 536,
@@ -240,15 +208,6 @@ function startGame(level) {
                 [1,1,1,1,1,1,1],
                 [0,1,1,1,1,1,1]
             ],
-            gridDefault: [
-                [2,1,1,1,1,1,1],
-                [1,1,1,1,1,1,1],
-                [1,1,1,1,1,1,1],
-                [3,1,1,1,1,1,1],
-                [1,1,1,1,1,1,1],
-                [1,1,1,1,1,1,1],
-                [0,1,1,1,1,1,1]
-            ],
             range: 2,
             gridWidth: 482,
             gridHeight: 536,
@@ -261,6 +220,7 @@ function startGame(level) {
 
     // level 4
     const level4 = new Level({
+        levelNum: 4,
         imageSrc: 'Img/level4-beta.png',
         position: {
             x: 0,
@@ -288,12 +248,6 @@ function startGame(level) {
                 [1,1,1,3],
                 [0,0,0,0]
             ],
-            gridDefault: [
-                [2,0,0,0],
-                [1,0,0,0],
-                [1,1,1,3],
-                [0,0,0,0]
-            ],
             range: 1,
             gridWidth: 482,
             gridHeight: 536,
@@ -327,15 +281,6 @@ function startGame(level) {
                 [0,0,1,0,0,0,0],
                 [0,0,0,0,0,0,0]
             ],
-            gridDefault: [
-                [2,1,1,1,1,1,1],
-                [0,0,1,0,0,0,0],
-                [0,0,1,0,0,0,0],
-                [0,0,3,0,0,0,0],
-                [0,0,1,0,0,0,0],
-                [0,0,1,0,0,0,0],
-                [0,0,0,0,0,0,0]
-            ],
             range: 2,
             gridWidth: 482,
             gridHeight: 536,
@@ -347,6 +292,7 @@ function startGame(level) {
 
     // level 5
     const level5= new Level({
+        levelNum: 5,
         imageSrc: 'Img/level5-beta.png',
         position: {
             x: 0,
@@ -374,12 +320,6 @@ function startGame(level) {
                 [3,1,1,1],
                 [1,0,1,1]
             ],
-            gridDefault: [
-                [2,1,1,1],
-                [1,1,1,1],
-                [3,1,1,1],
-                [1,0,1,1]
-            ],
             range: 1,
             gridWidth: 482,
             gridHeight: 536,
@@ -413,15 +353,6 @@ function startGame(level) {
                 [1,1,1,1,1,1,1],
                 [1,1,1,1,1,1,1]
             ],
-            gridDefault: [
-                [2,1,1,1,1,1,0],
-                [0,1,1,3,1,1,1],
-                [1,1,1,0,1,1,1],
-                [1,1,1,1,1,1,1],
-                [1,1,1,1,1,1,1],
-                [1,1,1,1,1,1,1],
-                [1,1,1,1,1,1,1]
-            ],
             range: 2,
             gridWidth: 482,
             gridHeight: 536,
@@ -432,6 +363,7 @@ function startGame(level) {
     })
     // level 6
     const level6 = new Level({
+        levelNum: 6,
         imageSrc: 'Img/level6-beta.png',
         position: {
             x: 0,
@@ -459,12 +391,6 @@ function startGame(level) {
                 [1,1,1,1],
                 [1,1,1,1]
             ],
-            gridDefault: [
-                [2,1,1,1],
-                [1,1,3,1],
-                [1,1,1,1],
-                [1,1,1,1]
-            ],
             range: 1,
             gridWidth: 482,
             gridHeight: 536,
@@ -498,15 +424,6 @@ function startGame(level) {
                 [1,1,1,1,1,1,1],
                 [1,1,1,1,1,1,1]
             ],
-            gridDefault: [
-                [2,1,1,1,1,1,1],
-                [1,1,1,1,1,1,3],
-                [1,1,1,1,1,1,1],
-                [1,1,1,1,1,1,1],
-                [1,1,0,1,1,1,1],
-                [1,1,1,1,1,1,1],
-                [1,1,1,1,1,1,1]
-            ],
             range: 2,
             gridWidth: 482,
             gridHeight: 536,
@@ -516,16 +433,22 @@ function startGame(level) {
         })    
     })
 
+
 // starts game based on level clicked on 
     if(level === "level1") {
+        nextLevel = 'level2'
         playLevel(level1)
     } else if(level === "level2") {
+        nextLevel = 'level3'
         playLevel(level2)
     } else if(level === "level3") {
+        nextLevel = 'level4'
         playLevel(level3)
     } else if(level === "level4") {
+        nextLevel = 'level5'
         playLevel(level4)
     } else if(level === "level5") {
+        nextLevel = 'level6'
         playLevel(level5)
     } else if(level === "level6") {
         playLevel(level6)
