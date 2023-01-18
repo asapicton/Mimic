@@ -1,45 +1,3 @@
-#canvas {
-    position: absolute; 
-    width: 85%; 
-    height: 79%; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center;
-}
-#win {
-    color: white; 
-    font-size: 65px;
-    font-family:Arial;
-	font-weight:bold;
-	background:linear-gradient(to top, #548954 5%, #54956d 100%);
-	background-color:#768d87;
-    padding: 30px;
-    display: none;
-    border-radius: 5px;
-}
-#next-level {
-    display: none;
-    text-align: center;
-    font-size: 30px;
-    width: 10%;
-    padding: 0px;
-    border-radius: 5px;
-    border: none;
-    margin: 5px;
-    color: white;
-    font-family:Arial;
-	font-weight:bold;
-    cursor:pointer;
-    box-shadow: 3px 4px 0px 0px #91b8b3;
-	background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
-	background-color:#768d87;
-    text-shadow:0px 1px 0px #2b665e;
-}
-#buttons {
-    position: static; 
-    float: right; 
-    width: 100%;
-}
 .level-buttons {
     font-size: 25px;
     box-shadow: 3px 4px 0px 0px #91b8b3;
@@ -56,9 +14,7 @@
 	text-decoration:none;
 	text-shadow:0px 1px 0px #2b665e;
     margin-bottom: 3%;
-
 }
-
 .level-buttons:hover {
 	background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
 	background-color:#6c7c7c;
@@ -67,13 +23,17 @@
 	position:relative;
 	top:1px;
 }
-#next-level:hover {
-    background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
-	background-color:#6c7c7c;
-}
-#next-level:active {
-    position:relative;
-	top:3px;
+
+#win {
+    color: white; 
+    font-size: 65px;
+    font-family:Arial;
+	font-weight:bold;
+	background:linear-gradient(to top, #548954 5%, #54956d 100%);
+	background-color:#768d87;
+    padding: 30px;
+    display: none;
+    border-radius: 5px;
 }
 
 #start-game {
@@ -96,10 +56,55 @@
     background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
 	background-color:#6c7c7c;
 }
-#next-level:active {
+#start-game:active {
     position:relative;
 	top:3px;
 }
-#menu {
-    margin-top: 25%;
+#next {
+    display: none;
+    text-align: center;
+    font-size: 30px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin: 5px;
+    color: white;
+    font-family:Arial;
+	font-weight:bold;
+    cursor:pointer;
+    box-shadow: 3px 4px 0px 0px #91b8b3;
+	background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+	background-color:#768d87;
+    text-shadow:0px 1px 0px #2b665e;
+}
+#next:active {
+    position:relative;
+	top:3px;
+}
+#next:hover {
+    background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+	background-color:#6c7c7c;
+}
+#tutorial {
+    position: absolute; 
+    width: 50%; 
+    height: 50%; 
+    top: 25%; 
+    left: 25%; 
+    background-color: rgba(237, 159, 237, 1);
+    border-radius: 5px;
+    box-shadow: 6px 7px 0px 0px rgba(104, 70, 103, 0.5);
+}
+#tutorial > p {
+    text-align: center; 
+    color: white;
+    font-size: 25px;
+    font-family:Arial;
+	font-weight:bold;
+    
+}
+#finish-tutorial {
+    font-size: 25px;
+    bottom: 20%;
+
 }

@@ -380,4 +380,8 @@ function moveMimic(mimic, direction) {
     }
 } 
 
+function closeTutorial() {
+    document.querySelector('#tutorial').style.display = 'none'
+}
+
 

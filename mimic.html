@@ -1,5 +1,48 @@
 <body>
-    <div style="position: relative;">
+    <div id="containter" style="position: relative; width: 1024px; height: 576px;">
+
+        <div style = "position: absolute; display: flex; width: 100%; height: 100%;">
+
+            <!-- Homescreen -->
+            <div id="menu" style = "position: absolute; width: 100%; height: 100%;">
+                <image src="Img/logo.jpg"></image>
+            </div>
+            <div id="tutorial" style="text-align: center; display: none;">
+                <p> RULES </p>
+                <p> - Arrow keys for movement</p>
+                <p> - Both dots move at the same time</p>
+                <p> - Both much be on finish to win!</p>
+                <button class= "level-buttons" id = "finish-tutorial" onclick="closeTutorial()">Lets go!</button>
+            </div>
+
+            <!-- Level Complete -->
+            <div id = "next-level" style="top: 50%; left: 45%; position: absolute; ">
+                <button id="next" onclick="startGame()">Next Level</button>
+            </div>
+
+            <!-- Start button -->
+            <div id="start" style="top: 50%; left: 40%; position: absolute;">
+                <button id = "start-game" onclick="startGame('level1')">Start</button>
+            </div>
+
+
+            <!-- Next Level -->
+            <div>
+
+            </div>
+
+        </div>
+        <canvas></canvas>
+    </div>
+    <div id="levels" style="display: inline-block;">
+        <button id="level1" style = "display: none;" class= "level-buttons" onclick="startGame('level1')">Level 1</button>
+        <button id="level2" style = "display: none;" class= "level-buttons" onclick="startGame('level2')">Level 2</button>
+        <button id="level3" style = "display: none;" class= "level-buttons" onclick="startGame('level3')">Level 3</button>
+        <button id="level4" style = "display: none;" class= "level-buttons" onclick="startGame('level4')">Level 4</button>
+        <button id="level5" style = "display: none;" class= "level-buttons" onclick="startGame('level5')">Level 5</button>
+        <button id="level6" style = "display: none;" class= "level-buttons" onclick="startGame('level6')">Level 6</button>
+    </div>
+    <!-- <div style="position: relative;">
         <div id = "buttons">
             <div id="levels"></div>
                 <button id="level1" style = "display: none;" class= "level-buttons" onclick="startGame('level1')">Level 1</button>
@@ -22,7 +65,7 @@
         <img id = "menu" src="Img/arrows.png">
         <image id="start" src="Img/logo.jpg"></image>
         <canvas id="game"></canvas>
-    </div>
+    </div> -->
     <script src="Javascript/classes.js"></script>
     <script src="Javascript/mimic.js"></script>
     <script src="Javascript/levels.js"></script>
