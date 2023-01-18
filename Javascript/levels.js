@@ -436,6 +436,9 @@ function startGame(level = nextLevel) {
 
 // starts game based on level clicked on 
     if(level === "level1") {
+        document.querySelector('#start').style.display = 'none'
+        document.querySelector('#start-game').style.display = 'none'
+        document.querySelector('#level1').style.display = 'inline'
         nextLevel = 'level2'
         playLevel(level1)
     } else if(level === "level2") {
@@ -455,6 +458,7 @@ function startGame(level = nextLevel) {
         nextLevel = 'level6'
         playLevel(level5)
     } else if(level === "level6") {
+        document.querySelector('#level6').style.display = 'inline'
         playLevel(level6)
     } 
 }

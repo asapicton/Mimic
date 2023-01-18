@@ -73,9 +73,17 @@ class Level {
         this.position = position
         this.imageSrc = imageSrc
         this.image = new Image()
+
+        // blurs background to show menu screen
+        this.blurImg = new Image()
+        this.blurImg.src = "Img/blur.png"
+
+        // temporary
+        this.temp = new Image()
+        this.temp.src = "Img/logo.jpg"
+
         this.image.src = imageSrc
         this.level = new Sprite(imageSrc)
-
         this.player = player
         this.mimic = mimic
         this.levelNum = levelNum
@@ -84,6 +92,12 @@ class Level {
 
     loadLevel() {
         draw.drawImage(this.image, this.position.x, this.position.y)
+    }
+    blur() {
+        draw.drawImage(this.blurImg, this.position.x, this.position.y)
+    }
+    menu() {
+        draw.drawImage(this.temp, this.position.x, this.position.y)
     }
 
     update() {

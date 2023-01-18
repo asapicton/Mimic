@@ -2,7 +2,7 @@
     <div style="position: relative;">
         <div id = "buttons">
             <div id="levels"></div>
-                <button id="level1" class= "level-buttons" onclick="startGame('level1')">Level 1</button>
+                <button id="level1" style = "display: none;" class= "level-buttons" onclick="startGame('level1')">Level 1</button>
                 <button id="level2" style = "display: none;" class= "level-buttons" onclick="startGame('level2')">Level 2</button>
                 <button id="level3" style = "display: none;" class= "level-buttons" onclick="startGame('level3')">Level 3</button>
                 <button id="level4" style = "display: none;" class= "level-buttons" onclick="startGame('level4')">Level 4</button>
@@ -12,12 +12,15 @@
         </div>
 
         <div id = "canvas">
+            <div>
+                <button id = "start-game" onclick="startGame('level1')">Start</button>
+            </div>
             <div id="win"></div>
                 <button id="next-level" onclick="startGame()">Next Level</button>
             </div>
         </div>
-        <img src="Img/arrows.png">
-
+        <img id = "menu" src="Img/arrows.png">
+        <image id="start" src="Img/logo.jpg"></image>
         <canvas id="game"></canvas>
     </div>
     <script src="Javascript/classes.js"></script>
