@@ -380,8 +380,16 @@ function moveMimic(mimic, direction) {
     }
 } 
 
-function closeTutorial() {
-    document.querySelector('#tutorial').style.display = 'none'
+// closes tutorial to start game
+function closeTutorial(tutorial) {
+    switch (tutorial) {
+        case "tutorial1":
+            document.querySelector('#tutorial1').style.display = 'none'
+        case "tutorial2":
+            document.querySelector('#tutorial2').style.display = 'none'
+        case "tutorial3":
+            document.querySelector('#tutorial3').style.display = 'none'
+    }
 }
 
 
