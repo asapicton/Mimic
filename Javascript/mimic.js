@@ -35,6 +35,8 @@ function playLevel(level) {
         level.update()
         player.update()
         mimic.update()
+        level.updateBarrier()
+        
         if(blur) {
             level.blur()
         }

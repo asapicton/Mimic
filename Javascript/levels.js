@@ -4,6 +4,7 @@ function startGame(level = nextLevel) {
     const level1 = new Level({
         levelNum: 1,
         imageSrc: 'Img/level1-beta.png',
+        barrierSrc: 'Img/level1-beta-barrier.png',
         position: {
             x: 0,
             y: 0
@@ -77,6 +78,7 @@ function startGame(level = nextLevel) {
     const level2 = new Level({
         levelNum: 2,
         imageSrc: 'Img/level2-beta.png',
+        barrierSrc: 'Img/level2-beta-barrier.png',
         position: {
             x: 0,
             y: 0
@@ -149,6 +151,7 @@ function startGame(level = nextLevel) {
     const level3 = new Level({
         levelNum: 3,
         imageSrc: 'Img/level3-beta.png',
+        barrierSrc: 'Img/level3-beta-barrier.png',
         position: {
             x: 0,
             y: 0
@@ -171,8 +174,8 @@ function startGame(level = nextLevel) {
             */
             grid: [
                 [2,1,1,1],
+                [1,3,1,1],
                 [1,1,1,1],
-                [3,1,1,1],
                 [1,1,1,1]
             ],
             range: 1,
@@ -201,12 +204,12 @@ function startGame(level = nextLevel) {
             */
             grid: [
                 [2,1,1,1,1,1,1],
+                [1,1,3,1,1,1,1],
                 [1,1,1,1,1,1,1],
                 [1,1,1,1,1,1,1],
-                [3,1,1,1,1,1,1],
                 [1,1,1,1,1,1,1],
                 [1,1,1,1,1,1,1],
-                [0,1,1,1,1,1,1]
+                [1,1,0,1,1,1,1]
             ],
             range: 2,
             gridWidth: 482,
@@ -222,6 +225,7 @@ function startGame(level = nextLevel) {
     const level4 = new Level({
         levelNum: 4,
         imageSrc: 'Img/level4-beta.png',
+        barrierSrc: 'Img/level4-beta-barrier.png',
         position: {
             x: 0,
             y: 0
@@ -246,7 +250,7 @@ function startGame(level = nextLevel) {
                 [2,0,0,0],
                 [1,0,0,0],
                 [1,1,1,3],
-                [0,0,0,0]
+                [1,0,0,0]
             ],
             range: 1,
             gridWidth: 482,
@@ -294,6 +298,7 @@ function startGame(level = nextLevel) {
     const level5= new Level({
         levelNum: 5,
         imageSrc: 'Img/level5-beta.png',
+        barrierSrc: 'Img/level5-beta-barrier.png',
         position: {
             x: 0,
             y: 0
@@ -317,8 +322,8 @@ function startGame(level = nextLevel) {
             grid: [
                 [2,1,1,1],
                 [1,1,1,1],
-                [3,1,1,1],
-                [1,0,1,1]
+                [1,1,1,1],
+                [3,0,1,1]
             ],
             range: 1,
             gridWidth: 482,
@@ -347,7 +352,7 @@ function startGame(level = nextLevel) {
             grid: [
                 [2,1,1,1,1,1,0],
                 [0,1,1,3,1,1,1],
-                [1,1,1,0,1,1,1],
+                [0,0,0,0,0,0,0],
                 [1,1,1,1,1,1,1],
                 [1,1,1,1,1,1,1],
                 [1,1,1,1,1,1,1],
@@ -365,6 +370,7 @@ function startGame(level = nextLevel) {
     const level6 = new Level({
         levelNum: 6,
         imageSrc: 'Img/level6-beta.png',
+        barrierSrc: 'Img/level6-beta-barrier.png',
         position: {
             x: 0,
             y: 0

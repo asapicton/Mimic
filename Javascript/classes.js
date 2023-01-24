@@ -68,21 +68,29 @@ class Sprite {
 // level class for each individual levels layout
 class Level {
 
-    constructor({levelNum, imageSrc, position = {x: 0, y: 0}, levelMap, player, mimic}) {
-        this.levelMap = levelMap
+    constructor({levelNum, imageSrc, barrierSrc, position = {x: 0, y: 0}, player, mimic}) {
         this.position = position
+        
+        // background grid with finishing spaces
         this.imageSrc = imageSrc
         this.image = new Image()
+        this.image.src = imageSrc
+
+        //bariers overlayed on top of player and mimic
+        this.barrierSrc = barrierSrc
+        this.barrierImg = new Image()
+        this.barrierImg.src = barrierSrc
+        
 
         // blurs background to show menu screen
         this.blurImg = new Image()
         this.blurImg.src = "Img/blur.png"
 
-        // temporary
-        this.temp = new Image()
-        this.temp.src = "Img/logo.jpg"
+        // logo
+        this.logo = new Image()
+        this.logo.src = "Img/logo.jpg"
 
-        this.image.src = imageSrc
+
         this.level = new Sprite(imageSrc)
         this.player = player
         this.mimic = mimic
@@ -97,7 +105,10 @@ class Level {
         draw.drawImage(this.blurImg, this.position.x, this.position.y)
     }
     menu() {
-        draw.drawImage(this.temp, this.position.x, this.position.y)
+        draw.drawImage(this.logo, this.position.x, this.position.y)
+    }
+    updateBarrier() {
+        draw.drawImage(this.barrierImg, this.position.x, this.position.y)
     }
 
     update() {
