@@ -2,6 +2,7 @@ let nextLevel;
 let prevLevel;
 let numLevels = 8
 
+
 // updates button style to show which level player is currently on
 function updateButtons(num) {
     document.querySelector('#level' + num).style.border = '3px solid black'
@@ -629,7 +630,6 @@ function startGame(level = nextLevel) {
     if(level === "level1") {
         //updates button styles for current level and completed levels
         updateButtons(1)
-
         document.querySelector('#menu').style.display = 'none'
         document.querySelector('#tutorial1').style.display = 'inline'
         nextLevel = 'level2'

@@ -20,6 +20,7 @@ function playLevel(level) {
     // resets animation loop and win state from previous level
     window.cancelAnimationFrame(requestId)
     document.querySelector('#next').style.display = 'none'
+    document.querySelector('#win-game').style.display = 'none'
 
     let blur = false
 
@@ -74,9 +75,13 @@ function playLevel(level) {
         if(checkWinState(mimic, player)) {
             // displays win on screen
             level.won = true
-            document.querySelector('#next').style.display = 'inline'
             document.querySelector('#level' + level.levelNum).style.background = '#3c8144'
             blur = true
+            if(level.levelNum === 8) {
+                document.querySelector('#win-game').style.display = 'inline'
+            } else {
+                document.querySelector('#next').style.display = 'inline'
+            }
         }
     }
 
