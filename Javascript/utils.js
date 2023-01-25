@@ -71,7 +71,6 @@ function updateGrid(sprite, direction, numSpaces) {
             }
             sprite.grid[sprite.gridPosY][sprite.gridPosX + numSpaces] = 2
         }
-        console.log(sprite.grid)
 
         // updates grid position
         sprite.gridPosX += numSpaces   
@@ -88,7 +87,6 @@ function updateGrid(sprite, direction, numSpaces) {
             sprite.grid[sprite.gridPosY][sprite.gridPosX - numSpaces] = 2
         }
         sprite.gridPosX -= numSpaces
-        console.log(sprite.grid)
 
     } else if (direction === "down") {
         if(sprite.onFinish) {
@@ -103,7 +101,6 @@ function updateGrid(sprite, direction, numSpaces) {
             sprite.grid[sprite.gridPosY + numSpaces][sprite.gridPosX] = 2
         }
         sprite.gridPosY += numSpaces
-        console.log(sprite.grid)
   
     } else {
         if(sprite.onFinish) {
@@ -118,7 +115,6 @@ function updateGrid(sprite, direction, numSpaces) {
             sprite.grid[sprite.gridPosY - numSpaces][sprite.gridPosX] = 2
         }
         sprite.gridPosY -= numSpaces
-        console.log(sprite.grid)
     }
 }
 
@@ -394,24 +390,10 @@ function closeTutorial(tutorial) {
             document.querySelector('#tutorial2').style.display = 'none'
         case "tutorial3":
             document.querySelector('#tutorial3').style.display = 'none'
+        case "tutorial4":
+            document.querySelector('#tutorial4').style.display = 'none'
     }
 }
 
-function updateButtons(num) {
-    document.querySelector('#level' + num).style.border = '3px solid black'
-    for(let i = 1; i <= numLevels; i++) {
-        if(i !== num) {
-            document.querySelector('#level' + i).style.border = '0px solid black'
-        }
-    }
-}
-
-function enterGame() {
-    document.querySelector('#start').style.display = 'none'
-    for(let i = 1; i <= numLevels; i++) {
-        document.querySelector('#level' + i).style.display = 'inline'
-    }
-    startGame('level1')
-}
 
 

@@ -21,15 +21,23 @@
                 <!-- Teaches player how to utilize barriers -->
                 <p> ---TIP--- </p>
                 <p> Purple barriers can stop movement for one dot while the other can still move!</p>
-                <button class= "level-buttons" id = "finish-tutorial" onclick="closeTutorial('tutorial1')">Try it!</button>
+                <button class= "level-buttons" id = "finish-tutorial" onclick="closeTutorial('tutorial2')">Try it!</button>
             </div>
             <div id="tutorial3" class="tutorial" style="text-align: center; display: none;">
 
                 <!-- Teaches player how to move to different spaces  -->
                 <p>---TIP---</p>
                 <p>The pink dot may jump over its finish...</p>
-                <p>Try hitting it on the barrier to change from light to dark grid spaces</p>
-                <button class= "level-buttons" id = "finish-tutorial" onclick="closeTutorial('tutorial1')">Cool!</button>
+                <p>Try hitting it on the barrier to change between light and dark grid spaces</p>
+                <button class= "level-buttons" id = "finish-tutorial" onclick="closeTutorial('tutorial3')">Cool!</button>
+            </div>
+            <div id="tutorial4" class="tutorial" style="text-align: center; display: none;">
+
+                <!-- Teaches player how to move to use walls of grid to move to different spaces -->
+                <p>---TIP---</p>
+                <p>Remember, moving 1 space instead of 2 with the pink dot is possible</p>
+                <p>If you're one away from the edge of the grid, hit it to change between dark and light spaces</p>
+                <button class= "level-buttons" id = "finish-tutorial" onclick="closeTutorial('tutorial4')">Great!</button>
             </div>
 
             <!-- Level Complete -->
@@ -47,18 +55,19 @@
     </div>
 
     <!-- Level buttons, display updated after each completion -->
-    <div id="levels" style="float: right; width: 29%; height: 50%;">
-        <button id="level1" style = "display: none;" class= "level-buttons" onclick="startGame('level1')">Level 1</button>
-        <button id="level2" style = "display: none;" class= "level-buttons" onclick="startGame('level2')">Level 2</button>
-        <button id="level3" style = "display: none;" class= "level-buttons" onclick="startGame('level3')">Level 3</button>
-        <button id="level4" style = "display: none;" class= "level-buttons" onclick="startGame('level4')">Level 4</button>
-        <button id="level5" style = "display: none;" class= "level-buttons" onclick="startGame('level5')">Level 5</button>
-        <button id="level6" style = "display: none;" class= "level-buttons" onclick="startGame('level6')">Level 6</button>
-        <button id="level7" style = "display: none;" class= "level-buttons" onclick="startGame('level7')">Level 7</button>
+    <div id="levels" style="float: right; width: 30%;">
+        <button id="level1" style = "display: none;" class= "level-buttons" onclick="startGame('level1')">1</button>
+        <button id="level2" style = "display: none;" class= "level-buttons" onclick="startGame('level2')">2</button>
+        <button id="level3" style = "display: none;" class= "level-buttons" onclick="startGame('level3')">3</button>
+        <button id="level4" style = "display: none;" class= "level-buttons" onclick="startGame('level4')">4</button>
+        <button id="level5" style = "display: none;" class= "level-buttons" onclick="startGame('level5')">5</button>
+        <button id="level6" style = "display: none;" class= "level-buttons" onclick="startGame('level6')">6</button>
+        <button id="level7" style = "display: none;" class= "level-buttons" onclick="startGame('level7')">7</button>
+        <button id="level8" style = "display: none;" class= "level-buttons" onclick="startGame('level8')">8</button>
     </div>
+    <script src="Javascript/utils.js"></script>
     <script src="Javascript/classes.js"></script>
     <script src="Javascript/mimic.js"></script>
     <script src="Javascript/levels.js"></script>
-    <script src="Javascript/utils.js"></script>
     <link href="mimic.css" type="text/css" rel="stylesheet">
 </body>
