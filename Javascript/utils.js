@@ -35,6 +35,7 @@ function checkWinState(mimic, player) {
         player.onFinish = false
         mimic.onFinish = false
         return true
+
     } else {
         return false
     }
@@ -70,6 +71,7 @@ function updateGrid(sprite, direction, numSpaces) {
             }
             sprite.grid[sprite.gridPosY][sprite.gridPosX + numSpaces] = 2
         }
+        console.log(sprite.grid)
 
         // updates grid position
         sprite.gridPosX += numSpaces   
@@ -86,6 +88,7 @@ function updateGrid(sprite, direction, numSpaces) {
             sprite.grid[sprite.gridPosY][sprite.gridPosX - numSpaces] = 2
         }
         sprite.gridPosX -= numSpaces
+        console.log(sprite.grid)
 
     } else if (direction === "down") {
         if(sprite.onFinish) {
@@ -100,6 +103,7 @@ function updateGrid(sprite, direction, numSpaces) {
             sprite.grid[sprite.gridPosY + numSpaces][sprite.gridPosX] = 2
         }
         sprite.gridPosY += numSpaces
+        console.log(sprite.grid)
   
     } else {
         if(sprite.onFinish) {
@@ -114,6 +118,7 @@ function updateGrid(sprite, direction, numSpaces) {
             sprite.grid[sprite.gridPosY - numSpaces][sprite.gridPosX] = 2
         }
         sprite.gridPosY -= numSpaces
+        console.log(sprite.grid)
     }
 }
 
@@ -399,6 +404,14 @@ function updateButtons(num) {
             document.querySelector('#level' + i).style.border = '0px solid black'
         }
     }
+}
+
+function enterGame() {
+    document.querySelector('#start').style.display = 'none'
+    for(let i = 1; i <= numLevels; i++) {
+        document.querySelector('#level' + i).style.display = 'inline'
+    }
+    startGame('level1')
 }
 
 

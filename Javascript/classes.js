@@ -13,7 +13,8 @@ class Sprite {
         spaceWidth  = gridWidth / numRows,
         spaceHeight = gridHeight / numRows,
         offsetX,
-        offsetY
+        offsetY,
+        onFinish
     }) {
         // sprite image
         this.imageSrc      = imageSrc
@@ -47,7 +48,7 @@ class Sprite {
         this.moveDown = false
 
         // determines if sprite is on finishing square
-        this.onFinish = false
+        this.onFinish = onFinish
     }
 
     // draws to screen based on top left corner x, y position

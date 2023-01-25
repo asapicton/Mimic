@@ -1,6 +1,7 @@
 let nextLevel;
 let prevLevel;
-let numLevels = 6
+let numLevels = 7
+
 function startGame(level = nextLevel) {
     // level 1
     const level1 = new Level({
@@ -39,6 +40,7 @@ function startGame(level = nextLevel) {
             numRows: 4,
             offsetX: GRID_MARGIN,
             offsetY: GRID_MARGIN,
+            onFinish: false
         }),
 
         // mimic of player 
@@ -71,7 +73,8 @@ function startGame(level = nextLevel) {
             gridHeight: 536,
             numRows: 7,
             offsetX: GRID_WIDTH + (GRID_MARGIN * 2),
-            offsetY: GRID_MARGIN
+            offsetY: GRID_MARGIN,
+            onFinish: false
         })   
         
     })
@@ -112,7 +115,8 @@ function startGame(level = nextLevel) {
             gridHeight: 536,
             numRows: 4,
             offsetX: GRID_MARGIN,
-            offsetY: GRID_MARGIN
+            offsetY: GRID_MARGIN,
+            onFinish: false
         }),
 
         // mimic of player 
@@ -145,15 +149,91 @@ function startGame(level = nextLevel) {
             gridHeight: 536,
             numRows: 7,
             offsetX: GRID_WIDTH + (GRID_MARGIN * 2),
-            offsetY: GRID_MARGIN
+            offsetY: GRID_MARGIN,
+            onFinish: false
+        })    
+    })
+
+    // level 2
+    const level3 = new Level({
+        levelNum: 3,
+        imageSrc: 'Img/level3.png',
+        barrierSrc: 'Img/level3-barrier.png',
+        position: {
+            x: 0,
+            y: 0
+        },
+    
+        // player
+        player: new Sprite ({
+            imageSrc: 'Img/player-beta.png',
+            position: {
+                x: PLAYER_START_X,
+                y: PLAYER_START_Y
+            },
+
+            /* 
+            2D levelMap array corresponds to each space in the player grid. 
+
+            0 = a space the player is not allowed to move to
+            1 = a space the player cannot move to
+            2 = the player's position
+            */
+            grid: [
+                [2,1,1,1],
+                [1,1,0,1],
+                [1,1,1,1],
+                [1,1,1,1]
+            ],
+            range: 1,
+            gridWidth: 482,
+            gridHeight: 536,
+            numRows: 4,
+            offsetX: GRID_MARGIN,
+            offsetY: GRID_MARGIN,
+            onFinish: true
+        }),
+
+        // mimic of player 
+        mimic: new Sprite({
+            imageSrc: 'Img/mimic-beta.png',
+            position: {
+                x: MIMIC_START_X,
+                y: MIMIC_START_Y
+            },
+
+            /* 
+            2D levelMap array corresponds to each space in the mimic grid. 
+
+            0 = a space the player is not allowed to move to
+            1 = a space the player cannot move to
+            2 = the player's position
+            3 = finishing space
+            */
+            grid: [
+                [2,1,1,1,1,1,1],
+                [1,1,1,1,1,1,1],
+                [1,1,1,1,1,1,1],
+                [1,1,1,1,1,1,1],
+                [3,1,1,1,1,1,1],
+                [1,1,1,1,1,1,1],
+                [1,1,1,1,1,1,1]
+            ],
+            range: 2,
+            gridWidth: 482,
+            gridHeight: 536,
+            numRows: 7,
+            offsetX: GRID_WIDTH + (GRID_MARGIN * 2),
+            offsetY: GRID_MARGIN,
+            onFinish: false
         })    
     })
 
     // level 3
-    const level3 = new Level({
-        levelNum: 3,
-        imageSrc: 'Img/level3-beta.png',
-        barrierSrc: 'Img/level3-beta-barrier.png',
+    const level4 = new Level({
+        levelNum: 4,
+        imageSrc: 'Img/level4-beta.png',
+        barrierSrc: 'Img/level4-beta-barrier.png',
         position: {
             x: 0,
             y: 0
@@ -185,7 +265,8 @@ function startGame(level = nextLevel) {
             gridHeight: 536,
             numRows: 4,
             offsetX: GRID_MARGIN,
-            offsetY: GRID_MARGIN
+            offsetY: GRID_MARGIN,
+            onFinish: false
         }),
 
         // mimic of player 
@@ -218,16 +299,17 @@ function startGame(level = nextLevel) {
             gridHeight: 536,
             numRows: 7,
             offsetX: GRID_WIDTH + (GRID_MARGIN * 2),
-            offsetY: GRID_MARGIN
+            offsetY: GRID_MARGIN,
+            onFinish: false
         })    
     })
 
 
     // level 4
-    const level4 = new Level({
-        levelNum: 4,
-        imageSrc: 'Img/level4-beta.png',
-        barrierSrc: 'Img/level4-beta-barrier.png',
+    const level5 = new Level({
+        levelNum: 5,
+        imageSrc: 'Img/level5-beta.png',
+        barrierSrc: 'Img/level5-beta-barrier.png',
         position: {
             x: 0,
             y: 0
@@ -259,7 +341,8 @@ function startGame(level = nextLevel) {
             gridHeight: 536,
             numRows: 4,
             offsetX: GRID_MARGIN,
-            offsetY: GRID_MARGIN
+            offsetY: GRID_MARGIN,
+            onFinish: false
         }),
 
         // mimic of player 
@@ -292,15 +375,16 @@ function startGame(level = nextLevel) {
             gridHeight: 536,
             numRows: 7,
             offsetX: GRID_WIDTH + (GRID_MARGIN * 2),
-            offsetY: GRID_MARGIN
+            offsetY: GRID_MARGIN,
+            onFinish: false
         })    
     })
 
     // level 5
-    const level5= new Level({
-        levelNum: 5,
-        imageSrc: 'Img/level5-beta.png',
-        barrierSrc: 'Img/level5-beta-barrier.png',
+    const level6 = new Level({
+        levelNum: 6,
+        imageSrc: 'Img/level6-beta.png',
+        barrierSrc: 'Img/level6-beta-barrier.png',
         position: {
             x: 0,
             y: 0
@@ -332,7 +416,8 @@ function startGame(level = nextLevel) {
             gridHeight: 536,
             numRows: 4,
             offsetX: GRID_MARGIN,
-            offsetY: GRID_MARGIN
+            offsetY: GRID_MARGIN,
+            onFinish: false
         }),
 
         // mimic of player 
@@ -353,7 +438,7 @@ function startGame(level = nextLevel) {
             */
             grid: [
                 [2,1,1,1,1,1,0],
-                [0,1,1,3,1,1,1],
+                [0,0,1,3,1,1,1],
                 [0,0,0,0,0,0,0],
                 [1,1,1,1,1,1,1],
                 [1,1,1,1,1,1,1],
@@ -365,14 +450,15 @@ function startGame(level = nextLevel) {
             gridHeight: 536,
             numRows: 7,
             offsetX: GRID_WIDTH + (GRID_MARGIN * 2),
-            offsetY: GRID_MARGIN
+            offsetY: GRID_MARGIN,
+            onFinish: false
         })    
     })
     // level 6
-    const level6 = new Level({
-        levelNum: 6,
-        imageSrc: 'Img/level6-beta.png',
-        barrierSrc: 'Img/level6-beta-barrier.png',
+    const level7 = new Level({
+        levelNum: 7,
+        imageSrc: 'Img/level7-beta.png',
+        barrierSrc: 'Img/level7-beta-barrier.png',
         position: {
             x: 0,
             y: 0
@@ -404,7 +490,8 @@ function startGame(level = nextLevel) {
             gridHeight: 536,
             numRows: 4,
             offsetX: GRID_MARGIN,
-            offsetY: GRID_MARGIN
+            offsetY: GRID_MARGIN,
+            onFinish: false
         }),
 
         // mimic of player 
@@ -437,7 +524,8 @@ function startGame(level = nextLevel) {
             gridHeight: 536,
             numRows: 7,
             offsetX: GRID_WIDTH + (GRID_MARGIN * 2),
-            offsetY: GRID_MARGIN
+            offsetY: GRID_MARGIN,
+            onFinish: false
         })    
     })
 
@@ -445,14 +533,10 @@ function startGame(level = nextLevel) {
 // starts game based on level clicked on 
     if(level === "level1") {
         updateButtons(1)
-        
         document.querySelector('#start').style.display = 'none'
         document.querySelector('#menu').style.display = 'none'
         document.querySelector('#tutorial1').style.display = 'inline'
-
-
         nextLevel = 'level2'
-
         playLevel(level1)
     } else if(level === "level2") {
         updateButtons(2)
@@ -463,10 +547,10 @@ function startGame(level = nextLevel) {
     } else if(level === "level3") {
         updateButtons(3)
         nextLevel = 'level4'
-        document.querySelector('#tutorial3').style.display = 'inline'
         playLevel(level3)
     } else if(level === "level4") {
         updateButtons(4)
+        document.querySelector('#tutorial3').style.display = 'inline'
         nextLevel = 'level5'
         playLevel(level4)
     } else if(level === "level5") {
@@ -475,8 +559,12 @@ function startGame(level = nextLevel) {
         playLevel(level5)
     } else if(level === "level6") {
         updateButtons(6)
+        nextLevel = 'level7'
         playLevel(level6)
-    } 
+    } else if (level == 'level7') {
+        updateButtons(7)
+        playLevel(level7)
+    }
 }
 
 

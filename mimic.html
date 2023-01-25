@@ -39,7 +39,7 @@
 
             <!-- Start button -->
             <div id="start" style="top: 50%; left: 40%; position: absolute;">
-                <button id = "start-game" onclick="startGame('level1')">Start</button>
+                <button id = "start-game" onclick="enterGame()">Start</button>
             </div>
 
         </div>
@@ -48,12 +48,13 @@
 
     <!-- Level buttons, display updated after each completion -->
     <div id="levels" style="float: right; width: 29%; height: 50%;">
-        <button id="level1" style = "display: inline;" class= "level-buttons" onclick="startGame('level1')">Level 1</button>
-        <button id="level2" style = "display: inline;" class= "level-buttons" onclick="startGame('level2')">Level 2</button>
-        <button id="level3" style = "display: inline;" class= "level-buttons" onclick="startGame('level3')">Level 3</button>
-        <button id="level4" style = "display: inline;" class= "level-buttons" onclick="startGame('level4')">Level 4</button>
-        <button id="level5" style = "display: inline;" class= "level-buttons" onclick="startGame('level5')">Level 5</button>
-        <button id="level6" style = "display: inline;" class= "level-buttons" onclick="startGame('level6')">Level 6</button>
+        <button id="level1" style = "display: none;" class= "level-buttons" onclick="startGame('level1')">Level 1</button>
+        <button id="level2" style = "display: none;" class= "level-buttons" onclick="startGame('level2')">Level 2</button>
+        <button id="level3" style = "display: none;" class= "level-buttons" onclick="startGame('level3')">Level 3</button>
+        <button id="level4" style = "display: none;" class= "level-buttons" onclick="startGame('level4')">Level 4</button>
+        <button id="level5" style = "display: none;" class= "level-buttons" onclick="startGame('level5')">Level 5</button>
+        <button id="level6" style = "display: none;" class= "level-buttons" onclick="startGame('level6')">Level 6</button>
+        <button id="level7" style = "display: none;" class= "level-buttons" onclick="startGame('level7')">Level 7</button>
     </div>
     <script src="Javascript/classes.js"></script>
     <script src="Javascript/mimic.js"></script>
