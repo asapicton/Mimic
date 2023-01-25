@@ -392,4 +392,13 @@ function closeTutorial(tutorial) {
     }
 }
 
+function updateButtons(num) {
+    document.querySelector('#level' + num).style.border = '3px solid black'
+    for(let i = 1; i <= numLevels; i++) {
+        if(i !== num) {
+            document.querySelector('#level' + i).style.border = '0px solid black'
+        }
+    }
+}
+
 

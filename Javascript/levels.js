@@ -1,4 +1,6 @@
 let nextLevel;
+let prevLevel;
+let numLevels = 6
 function startGame(level = nextLevel) {
     // level 1
     const level1 = new Level({
@@ -442,33 +444,37 @@ function startGame(level = nextLevel) {
 
 // starts game based on level clicked on 
     if(level === "level1") {
+        updateButtons(1)
+        
         document.querySelector('#start').style.display = 'none'
         document.querySelector('#menu').style.display = 'none'
-        document.querySelector('#level1').style.display = 'inline'
         document.querySelector('#tutorial1').style.display = 'inline'
+
+
         nextLevel = 'level2'
 
         playLevel(level1)
     } else if(level === "level2") {
-        document.querySelector('#level2').style.display = 'inline'
+        updateButtons(2)
+
         document.querySelector('#tutorial2').style.display = 'inline'
         nextLevel = 'level3'
         playLevel(level2)
     } else if(level === "level3") {
-        document.querySelector('#level3').style.display = 'inline'
+        updateButtons(3)
         nextLevel = 'level4'
         document.querySelector('#tutorial3').style.display = 'inline'
         playLevel(level3)
     } else if(level === "level4") {
-        document.querySelector('#level4').style.display = 'inline'
+        updateButtons(4)
         nextLevel = 'level5'
         playLevel(level4)
     } else if(level === "level5") {
-        document.querySelector('#level5').style.display = 'inline'
+        updateButtons(5)
         nextLevel = 'level6'
         playLevel(level5)
     } else if(level === "level6") {
-        document.querySelector('#level6').style.display = 'inline'
+        updateButtons(6)
         playLevel(level6)
     } 
 }

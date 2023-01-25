@@ -1,5 +1,5 @@
 <body>
-    <div id="containter" style="position: relative; width: 1024px; height: 576px;">
+    <div id="containter" style="position: relative; width: 1024px; height: 576px; float: left;">
         <div style = "position: absolute; display: flex; width: 100%; height: 100%;">
             <!-- Homescreen -->
             <div id="menu" style = "position: absolute; width: 100%; height: 100%;">
@@ -47,13 +47,13 @@
     </div>
 
     <!-- Level buttons, display updated after each completion -->
-    <div id="levels" style="display: inline-block;">
-        <button id="level1" style = "display: none;" class= "level-buttons" onclick="startGame('level1')">Level 1</button>
-        <button id="level2" style = "display: none;" class= "level-buttons" onclick="startGame('level2')">Level 2</button>
-        <button id="level3" style = "display: none;" class= "level-buttons" onclick="startGame('level3')">Level 3</button>
-        <button id="level4" style = "display: none;" class= "level-buttons" onclick="startGame('level4')">Level 4</button>
-        <button id="level5" style = "display: none;" class= "level-buttons" onclick="startGame('level5')">Level 5</button>
-        <button id="level6" style = "display: none;" class= "level-buttons" onclick="startGame('level6')">Level 6</button>
+    <div id="levels" style="float: right; width: 29%; height: 50%;">
+        <button id="level1" style = "display: inline;" class= "level-buttons" onclick="startGame('level1')">Level 1</button>
+        <button id="level2" style = "display: inline;" class= "level-buttons" onclick="startGame('level2')">Level 2</button>
+        <button id="level3" style = "display: inline;" class= "level-buttons" onclick="startGame('level3')">Level 3</button>
+        <button id="level4" style = "display: inline;" class= "level-buttons" onclick="startGame('level4')">Level 4</button>
+        <button id="level5" style = "display: inline;" class= "level-buttons" onclick="startGame('level5')">Level 5</button>
+        <button id="level6" style = "display: inline;" class= "level-buttons" onclick="startGame('level6')">Level 6</button>
     </div>
     <script src="Javascript/classes.js"></script>
     <script src="Javascript/mimic.js"></script>
