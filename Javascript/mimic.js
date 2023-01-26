@@ -77,7 +77,7 @@ function playLevel(level) {
             level.won = true
             document.querySelector('#level' + level.levelNum).style.background = '#3c8144'
             blur = true
-            if(level.levelNum === 8) {
+            if(level.levelNum === 9) {
                 document.querySelector('#win-game').style.display = 'inline'
             } else {
                 document.querySelector('#next').style.display = 'inline'
