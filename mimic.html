@@ -11,25 +11,25 @@
 
                 <!-- Teaches player how to move and win -->
                 <p> ---RULES--- </p>
-                <p> - Arrow keys for movement</p>
+                <p> - Use arrow keys for movement</p>
                 <p> - Both dots move at the same time</p>
                 <p> - Both dots must be on finish to win!</p>
-                <button class= "level-buttons" id = "finish-tutorial" onclick="closeTutorial('tutorial1')">Lets go!</button>
+                <button class= "finish-tutorial" onclick="closeTutorial('tutorial1')">Lets go!</button>
             </div>
             <div id="tutorial2" class="tutorial" style="text-align: center; display: none;">
 
                 <!-- Teaches player how to utilize barriers -->
                 <p> ---TIP--- </p>
                 <p> Purple barriers can stop movement for one dot while the other can still move!</p>
-                <button class= "level-buttons" id = "finish-tutorial" onclick="closeTutorial('tutorial2')">Try it!</button>
+                <button class= "finish-tutorial" onclick="closeTutorial('tutorial2')">Try it!</button>
             </div>
             <div id="tutorial3" class="tutorial" style="text-align: center; display: none;">
 
                 <!-- Teaches player how to move to different spaces  -->
                 <p>---TIP---</p>
-                <p>The pink dot may jump over its finish...</p>
-                <p>Try hitting it on the barrier to change between light and dark grid spaces</p>
-                <button class= "level-buttons" id = "finish-tutorial" onclick="closeTutorial('tutorial3')">Cool!</button>
+                <p>The pink dot moves 2 spaces instead of 1...</p>
+                <p>To switch between light and dark grid spaces, move into a barrier or wall that's only 1 away</p>
+                <button class= "finish-tutorial"  onclick="closeTutorial('tutorial3')">Cool!</button>
             </div>
             <div id="tutorial4" class="tutorial" style="text-align: center; display: none;">
 
@@ -37,7 +37,7 @@
                 <p>---TIP---</p>
                 <p>Remember, moving 1 space instead of 2 with the pink dot is possible</p>
                 <p>If you're one away from the edge of the grid, hit it to change between dark and light spaces</p>
-                <button class= "level-buttons" id = "finish-tutorial" onclick="closeTutorial('tutorial4')">Great!</button>
+                <button class= "finish-tutorial" onclick="closeTutorial('tutorial4')">Great!</button>
             </div>
 
             <!-- Level Complete -->
@@ -69,6 +69,7 @@
         <button id="level7" style = "display: none;" class= "level-buttons" onclick="startGame('level7')">7</button>
         <button id="level8" style = "display: none;" class= "level-buttons" onclick="startGame('level8')">8</button>
         <button id="level9" style = "display: none;" class= "level-buttons" onclick="startGame('level9')">9</button>
+        <button id="level10" style = "display: none;" class= "level-buttons" onclick="startGame('level10')">10</button>
     </div>
     <script src="Javascript/utils.js"></script>
     <script src="Javascript/classes.js"></script>

@@ -6,6 +6,7 @@
 }
 .level-buttons {
     font-size: 55px;
+    width: 90px;
     box-shadow: 3px 4px 0px 0px #91b8b3;
 	background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
 	background-color:#5a6c5c;
@@ -16,7 +17,6 @@
 	color:#ffffff;
 	font-family:Arial;
 	font-weight:bold;
-	padding:12px 44px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #2b665e;
     margin-bottom: 3%;
@@ -106,9 +106,6 @@
 	background-color:#768d87;
     text-shadow:0px 1px 0px #2b665e;
 }
-#complete {
-
-}
 .tutorial {
     position: absolute; 
     width: 50%; 
@@ -129,8 +126,31 @@
     padding-left: 10px;
     
 }
-#finish-tutorial {
+.finish-tutorial {
     font-size: 25px;
     bottom: 20%;
+    font-size: 35px;
+    box-shadow: 3px 4px 0px 0px #91b8b3;
+	background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+	background-color:#5a6c5c;
+	border-radius:5px;
+	border:0px solid #566963;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-weight:bold;
+	padding:12px 44px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2b665e;
+    margin-bottom: 3%;
+}
 
+.finish-tutorial:hover {
+	background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+	background-color:#6c7c7c;
+}
+.finish-tutorial:active {
+	position:relative;
+	top:1px;
 }
