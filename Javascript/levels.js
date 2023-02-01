@@ -804,10 +804,10 @@ function startGame(level = nextLevel) {
         playLevel(level5)
     } else if(level === "level6") {
         updateButtons(6)
-        document.querySelector('#tutorial4').style.display = 'inline'
         nextLevel = 'level7'
         playLevel(level6)
     } else if (level === 'level7') {
+        document.querySelector('#tutorial4').style.display = 'inline'
         updateButtons(7)
         nextLevel = 'level8'
         playLevel(level7)
